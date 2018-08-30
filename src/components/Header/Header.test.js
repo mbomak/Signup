@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 
 import Header from './index';
 
-describe('<Header />', () => {
+describe('<ProgressBar />', () => {
   it('renders without crashing', () => {
     shallow(<Header />);
   });

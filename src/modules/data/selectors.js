@@ -1,12 +1,13 @@
 import { createSelector } from 'reselect';
+import { getFormMeta } from 'redux-form';
 
 const data = state => state;
 
-const takeBalance = createSelector(
+const getTitle = createSelector(
     data,
-    obj => obj.data.balance
+    obj => obj.data.title
 );
 
 export default {
-    takeBalance,
+    getTitle
 };

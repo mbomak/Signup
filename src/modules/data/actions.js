@@ -1,8 +1,8 @@
 import * as types from './constants';
 
-export function fetchData(payload) {
+export function changeTitle(payload) {
     return {
-        type: types.FETCH_DATA,
+        type: types.CHANGE_TITLE,
         payload
     };
 }

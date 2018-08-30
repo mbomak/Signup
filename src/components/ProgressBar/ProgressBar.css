@@ -1,0 +1,14 @@
+.progress-bar {
+  margin-bottom: 60px;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  transition: width 0.2s; }
+  .progress-bar_1 {
+    width: calc(100% / 3); }
+  .progress-bar_2 {
+    width: calc(100% * 2/3); }
+  .progress-bar_3 {
+    width: 100%; }
+  .progress-bar__line {
+    height: 15px;
+    background-color: #396beb; }

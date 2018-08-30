@@ -1,16 +1,17 @@
-/* eslint-disable indent */
 import * as types from './constants';
 
 const initialState = {
-    balance: 0
+    data: {
+        title: 'Signup'
+    }
 };
 
 function dataReducer(state = initialState, { type, payload }) {
     switch (type) {
-    case types.FETCH_DATA:
+    case types.CHANGE_TITLE:
         return {
             ...state,
-            balance: payload,
+            title: payload
         };
     default:
         return state;

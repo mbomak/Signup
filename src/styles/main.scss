@@ -6,7 +6,10 @@
 html,
 body {
   font-family: $font-1;
-  background-color: $col-1;
+}
+
+body {
+  padding: 20px 15px 0;
 }
 
 /* For Firefox */

@@ -1,0 +1,25 @@
+@import 'styles/_helpers';
+
+.progress-bar {
+    margin-bottom: 60px;
+    border-top: 1px solid $col-1;
+    border-bottom: 1px solid $col-1;
+    transition: width 0.2s;
+
+    &_1 {
+        width: calc(100% / 3);
+    }
+
+    &_2 {
+        width: calc(100% * 2/3);
+    }
+
+    &_3 {
+        width: 100%;
+    }
+
+    &__line {
+        height: 15px;
+        background-color: $col-2;
+    }
+}
