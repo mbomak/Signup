@@ -28,15 +28,24 @@ function validate(values) {
     }
 
     if (!values.birthMonth) {
-        errors.birthMonth  = 'Birthday is required';
+        errors.birthMonth = 'Birthday is required';
     } else if (values.birthMonth < 1 || values.birthMonth > 12) {
         errors.birthMonth = 'Invalid month of birth';
     }
 
     if (!values.birthYears) {
-        errors.birthYears  = 'Birthday is required';
-    } else if (values.birthYears > moment().format('YYYY')) {
-        errors.birthYears = 'Invalid year of birth. You are form future?!';
+        errors.birthYears = 'Birthday is required';
+    } else {
+        const birthDayStr = `${values.birthYears}-${values.birthMonth}-${values.birthDay}`;
+        const age = moment().diff(birthDayStr, 'years');
+
+        if (!moment(birthDayStr).isValid()) {
+            errors.birthYears = 'Invalid date';
+        } else if (values.birthYears > moment().format('YYYY')) {
+            errors.birthYears = 'Invalid year of birth. You are from future?!';
+        } else if (age < 18) {
+            errors.birthYears = 'Сongratulations, you are young';
+        }
     }
 
     return errors;

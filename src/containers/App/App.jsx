@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import cn from 'classnames';
 import {Field, Fields, getFormMeta, change, reduxForm} from 'redux-form';
 import Select from 'react-select';
+import moment from 'moment';
 
 // import components
 import Header from 'components/Header';
@@ -26,7 +27,10 @@ import './App.css';
 import './Form.css';
 
 const normalizeData = (data) => {
-    const birthDay = data.birthDay + data.birthMonth + data.birthYears;
+    let birthDay = moment(`${data.birthYears}-${data.birthMonth}-${data.birthDay}`);
+    if (birthDay.isValid()) {
+        birthDay = birthDay.valueOf();
+    }
     delete data.birthDay;
     delete data.birthMonth;
     delete data.birthYears;
@@ -258,7 +262,7 @@ class App extends PureComponent {
             handleSubmit,
             title
         } = this.props;
-        console.log(this.props);
+
         return (
             <div className="app">
                 <Header title={title}/>

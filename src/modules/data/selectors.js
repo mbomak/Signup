@@ -1,5 +1,4 @@
 import { createSelector } from 'reselect';
-import { getFormMeta } from 'redux-form';
 
 const data = state => state;
 
